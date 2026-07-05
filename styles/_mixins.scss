@@ -1,0 +1,50 @@
+@use 'tokens' as t;
+
+// @include m.respond(md) { ... }
+@mixin respond($bp) {
+  @if $bp == sm {
+    @media (min-width: t.$bp-sm) { @content; }
+  } @else if $bp == md {
+    @media (min-width: t.$bp-md) { @content; }
+  } @else if $bp == lg {
+    @media (min-width: t.$bp-lg) { @content; }
+  } @else if $bp == xl {
+    @media (min-width: t.$bp-xl) { @content; }
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: t.$container-max;
+  margin-inline: auto;
+  padding-inline: t.$space-5;
+
+  @include respond(md) {
+    padding-inline: t.$space-7;
+  }
+}
+
+// Premium glass card surface.
+@mixin glass($border: t.$color-border) {
+  background: linear-gradient(160deg, t.$color-surface, rgba(255, 255, 255, 0.015));
+  border: 1px solid $border;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: t.$shadow-soft;
+}
+
+// Gold-to-blue gradient text: the "crown meets arc reactor" moment.
+// Used sparingly — name in the hero, one or two headings.
+@mixin gradient-text {
+  background: linear-gradient(100deg, t.$color-gold-soft 0%, t.$color-gold 35%, t.$color-blue-soft 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid t.$color-gold-soft;
+    outline-offset: 3px;
+  }
+}

@@ -1,0 +1,76 @@
+@use 'tokens' as tok;
+@use 'mixins' as mix;
+@use 'base';
+
+.container {
+  @include mix.container;
+}
+
+.section {
+  position: relative;
+  padding-block: tok.$space-9;
+  scroll-margin-top: calc(#{tok.$nav-height-shrunk} + #{tok.$space-4});
+
+  @include mix.respond(md) {
+    padding-block: tok.$space-10;
+  }
+}
+
+.section__head {
+  max-width: 640px;
+  margin-bottom: tok.$space-7;
+}
+
+// Herald line above section titles.
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: tok.$space-2;
+  font-family: tok.$font-mono;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: tok.$color-gold;
+  margin-bottom: tok.$space-3;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: tok.$color-gold;
+    display: inline-block;
+  }
+}
+
+.section__title {
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.6rem);
+  color: tok.$color-text;
+}
+
+.section__subtitle {
+  margin-top: tok.$space-3;
+  color: tok.$color-muted;
+  font-size: 1.0625rem;
+  max-width: 60ch;
+}
+
+.gradient-text {
+  @include mix.gradient-text;
+}
+
+.mono {
+  font-family: tok.$font-mono;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
