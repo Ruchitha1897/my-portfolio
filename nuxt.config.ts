@@ -9,11 +9,12 @@ export default defineNuxtConfig({
   ssr: true,
 
   app: {
+    baseURL: '/my-portfolio/',
     head: {
       htmlAttrs: { lang: 'en' },
       title: 'Portfolio — Software Engineer',
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=' },
         {
           name: 'description',
           content:
