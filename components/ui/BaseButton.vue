@@ -8,6 +8,7 @@ interface Props {
   icon?: IconName
   iconPosition?: 'left' | 'right'
   target?: string
+  download?: string | boolean
   magnetic?: boolean
 }
 
@@ -31,6 +32,7 @@ component(
   :href="href"
   :target="target"
   :rel="rel"
+  :download="download"
   :type="!href ? type : undefined"
 )
   AppIcon(v-if="icon && iconPosition === 'left'" :name="icon" :size="18")

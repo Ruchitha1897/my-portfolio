@@ -17,17 +17,19 @@ section#certifications.section.certifications
         interactive
         v-reveal="i"
       )
-        span.cert-card__icon
+        img.cert-card__badge(v-if="cert.badgeImage" :src="cert.badgeImage" :alt="cert.title" loading="lazy")
+        span.cert-card__icon(v-else)
           AppIcon(name="medal" :size="22")
         h3.cert-card__title {{ cert.title }}
         p.cert-card__issuer {{ cert.issuer }} · {{ cert.date }}
+        p.cert-card__credential-id(v-if="cert.credentialId") Credential ID: {{ cert.credentialId }}
         BaseButton.cert-card__verify(
           v-if="cert.credentialUrl"
           variant="secondary"
           :href="cert.credentialUrl"
           target="_blank"
           icon="shield"
-        ) Verify Credential
+        ) View My Certificate
 </template>
 
 <style scoped lang="scss">
@@ -45,6 +47,13 @@ section#certifications.section.certifications
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.cert-card__badge {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  margin-bottom: t.$space-4;
 }
 
 .cert-card__icon {
@@ -68,6 +77,12 @@ section#certifications.section.certifications
 .cert-card__issuer {
   color: t.$color-muted;
   font-size: 0.875rem;
+  margin-bottom: t.$space-2;
+}
+
+.cert-card__credential-id {
+  color: t.$color-muted;
+  font-size: 0.8rem;
   margin-bottom: t.$space-5;
   flex-grow: 1;
 }

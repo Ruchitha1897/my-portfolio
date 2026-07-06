@@ -16,8 +16,7 @@ section#projects.section.projects
   div.container
     SectionHeading(
       eyebrow="Projects"
-      title="Selected work"
-      subtitle="Featured builds first, then academic research and personal experiments."
+      title=" My work"
     )
 
     template(v-for="group in groups" :key="group.key")

@@ -74,21 +74,23 @@ section#hero.hero(ref="heroEl")
 
       p.hero__copy.js-hero-copy {{ profile.tagline }}
 
+      div.hero__stats.js-hero-copy
+        StatCounter(v-for="stat in stats" :key="stat.id" :stat="stat")
+
       div.hero__actions
         BaseButton.js-hero-cta(
           variant="primary" :href="profile.resumeFile" target="_blank" icon="download" magnetic
         ) Download Resume
         BaseButton.js-hero-cta(
-          variant="secondary" href="#projects" icon="arrow-right" icon-position="right" magnetic
+          variant="secondary" href="https://github.com/Ruchitha1897" target="_blank" icon="arrow-right" icon-position="right" magnetic
         ) View Projects
-        BaseButton.js-hero-cta(variant="ghost" href="#contact") Contact Me
+        BaseButton.js-hero-cta(
+          variant="ghost" :href="socialLinks.find((link) => link.id === 'linkedin')?.url" target="_blank" icon="linkedin"
+        ) LinkedIn
 
     div.hero__portrait.js-hero-portrait
       div.hero__portrait-ring
         img.hero__portrait-photo(src="/photo.jpeg" :alt="profile.name")
-
-  a.hero__scroll-cue(href="#about" aria-label="Scroll to About section")
-    span.hero__scroll-line
 </template>
 
 <style scoped lang="scss">
@@ -218,6 +220,19 @@ section#hero.hero(ref="heroEl")
   color: t.$color-muted;
   font-size: 1.0625rem;
   margin-bottom: t.$space-7;
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: t.$space-4;
+  margin-block: t.$space-4;
+  padding-block: t.$space-4;
+  border-block: 1px solid t.$color-border;
+
+  @include m.respond(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .hero__actions {

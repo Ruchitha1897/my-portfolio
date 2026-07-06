@@ -10,7 +10,6 @@ useSeoMeta({
 <template lang="pug">
 div
   HeroSection
-  AboutSection
   SigilDivider
   ProjectsSection
   SigilDivider

@@ -17,7 +17,7 @@ import type {
 export const profile = {
   name: 'Ruchitha',
   initials: 'R',
-  githubUsername: 'Ruchitha_Developer',
+  githubUsername: 'Ruchitha1897',
   roles: [
     'Software Engineer',
     'Full-Stack Developer',
@@ -26,7 +26,7 @@ export const profile = {
     'AI Enthusiast',
   ],
   tagline:
-    'I build fast, reliable products end to end — from cloud infrastructure to the pixels people actually touch.',
+    'I build fast,, and running them reliably on AWS Outside client work I explore applied AI and contribute to open-source tooling. I care about code the next engineer can read without a walkthrough reliable products end to end — from cloud infrastructure to the pixels people actually touch.',
   bio: [
     'I\u2019m a full-stack engineer who enjoys the whole path from a rough idea to a deployed, monitored service. Most of my recent work sits at the intersection of web applications and cloud infrastructure — designing APIs, shaping data models, and running them reliably on AWS.',
     'Outside client work I explore applied AI and contribute to open-source tooling. I care about code the next engineer can read without a walkthrough.',
@@ -39,15 +39,14 @@ export const profile = {
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '#hero' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Certifications', href: '#certifications' },
   { label: 'Resume', href: '#resume' },
+  { label: 'Certifications', href: '#certifications' },
   { label: 'Badges', href: '#badges' },
-  { label: 'GitHub', href: '#github' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export const stats: Stat[] = [
-  { id: 'years', label: 'Years of experience', value: 4, suffix: '+' },
+  { id: 'years', label: 'Years of experience', value: 3, suffix: '+' },
   { id: 'projects', label: 'Projects shipped', value: 18, suffix: '+' },
   { id: 'certs', label: 'AWS certifications', value: 3 },
   { id: 'commits', label: 'Commits this year', value: 900, suffix: '+' },
@@ -73,13 +72,20 @@ export const timeline: TimelineEntry[] = [
       'Built and scaled FastAPI services on AWS, introduced containerized deployments with Docker and Kubernetes, and mentored two junior engineers.',
   },
   {
+    id: 'edu-2',
+    kind: 'education',
+    range: 'Aug 2024 — May 2026',
+    title: 'Master of Science in Computer Science',
+    org: 'Northern Arizona University, Flagstaff, AZ',
+    description: '',
+  },
+  {
     id: 'edu-1',
     kind: 'education',
-    range: '2017 — 2021',
-    title: 'B.S. in Computer Science',
-    org: 'University Name',
-    description:
-      'Distributed systems, algorithms, and databases. Capstone on medical image segmentation.',
+    range: 'Aug 2018 — Aug 2022',
+    title: 'Bachelor of Science in Computer Science',
+    org: 'Visvesvaraya Technological University, Bangalore, IN',
+    description: '',
   },
 ]
 
@@ -144,6 +150,27 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
+    id: 'proj-4',
+    title: 'Distributed Job Queue on Kubernetes',
+    description:
+      'A horizontally scalable queue with autoscaling worker pools, deployed on Kubernetes with DynamoDB for state.',
+    stack: ['Python', 'Kubernetes', 'DynamoDB', 'AWS'],
+    category: 'personal',
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/your-username',
+    accent: 'blue',
+  },
+  {
+    id: 'proj-5',
+    title: 'Smart-Home IoT Hub',
+    description:
+      'An event-driven hub for household sensors with an offline-first dashboard and MQTT ingestion.',
+    stack: ['TypeScript', 'Node.js', 'MQTT', 'MongoDB'],
+    category: 'personal',
+    githubUrl: 'https://github.com/your-username',
+    accent: 'gold',
+  },
+  {
     id: 'proj-1',
     title: 'Cloud-Native Task Orchestrator',
     description:
@@ -151,7 +178,6 @@ export const projects: Project[] = [
     stack: ['Vue 3', 'FastAPI', 'PostgreSQL', 'AWS', 'Docker'],
     category: 'featured',
     githubUrl: 'https://github.com/your-username',
-    liveUrl: 'https://example.com',
     accent: 'gold',
   },
   {
@@ -182,6 +208,7 @@ export const projects: Project[] = [
       'A horizontally scalable queue with autoscaling worker pools, deployed on Kubernetes with DynamoDB for state.',
     stack: ['Python', 'Kubernetes', 'DynamoDB', 'AWS'],
     category: 'personal',
+    liveUrl: 'https://example.com',
     githubUrl: 'https://github.com/your-username',
     accent: 'blue',
   },
@@ -204,13 +231,16 @@ export const certifications: Certification[] = [
     issuer: 'Amazon Web Services',
     date: '2024',
     credentialUrl: 'https://www.credly.com/',
+    credentialId: 'ABC123XYZ',
+    badgeImage: '/badges/aws-certified-developer-associate.png',
   },
   {
     id: 'cert-2',
-    title: 'AWS Certified Solutions Architect — Associate',
-    issuer: 'Amazon Web Services',
+    title: 'AWS SimuLearn: AI Practitioner — Trained',
+    issuer: 'AWS SimuLearn',
     date: '2024',
-    credentialUrl: 'https://www.credly.com/',
+    credentialUrl: 'https://www.credly.com/badges/c9ed39a0-108b-4169-a3b7-f7dfaf58de43',
+    badgeImage: '/badges/aws-simulearn-ai-practitioner.png',
   },
   {
     id: 'cert-3',
@@ -218,6 +248,8 @@ export const certifications: Certification[] = [
     issuer: 'Amazon Web Services',
     date: '2023',
     credentialUrl: 'https://www.credly.com/',
+    credentialId: 'ABC123XYZ',
+    badgeImage: '/badges/aws-certified-cloud-practitioner.png',
   },
 ]
 
@@ -231,8 +263,8 @@ export const badges: BadgePlatform[] = [
 ]
 
 export const socialLinks: SocialLink[] = [
-  { id: 'github', label: 'GitHub', url: 'https://github.com/your-username', icon: 'github' },
-  { id: 'linkedin', label: 'LinkedIn', url: 'https://linkedin.com/in/your-username', icon: 'linkedin' },
+  { id: 'github', label: 'GitHub', url: 'https://github.com/Ruchitha1897', icon: 'github' },
+  { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/ruchitha-podhili-jayachandra-naidu-763b781a2', icon: 'linkedin' },
   { id: 'email', label: profile.email, url: `mailto:${profile.email}`, icon: 'mail' },
   { id: 'location', label: profile.location, url: '#contact', icon: 'location' },
 ]

@@ -10,12 +10,6 @@ section#resume.section.resume
     )
 
     GlassCard.resume__card(accent="gold" v-reveal)
-      div.resume__frame-wrap
-        iframe.resume__frame(
-          :src="profile.resumeFile"
-          title="Resume preview"
-          loading="lazy"
-        )
       div.resume__actions
         BaseButton(variant="primary" :href="profile.resumeFile" target="_blank" icon="download" magnetic)
           | Download Resume

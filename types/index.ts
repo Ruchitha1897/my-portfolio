@@ -55,6 +55,8 @@ export interface Certification {
   issuer: string
   date: string
   credentialUrl?: string
+  credentialId?: string
+  badgeImage?: string
 }
 
 export interface BadgePlatform {

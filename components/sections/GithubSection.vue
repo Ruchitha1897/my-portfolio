@@ -43,7 +43,7 @@ section#github.section.github
 
     div.github__images(v-reveal)
       GlassCard.github__image-card(accent="blue")
-        img(:src="statsImg" alt="GitHub statistics overview" loading="lazy" width="480" height="200")
+        img(:src="statsImg" alt="GitHub statistics overview" loading="lazy" width="450" height="50")
       GlassCard.github__image-card(accent="blue")
         img(:src="langsImg" alt="Most used programming languages" loading="lazy" width="360" height="200")
 
