@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const ui = useUiStore()
+const route = useRoute()
 const { y } = useWindowScroll()
 const isScrolled = computed(() => y.value > 24)
-
-useActiveSection(navLinks.map((link) => link.href.replace('#', '')))
 
 const githubSocial = socialLinks.find((link) => link.icon === 'github')
 </script>
@@ -11,18 +10,18 @@ const githubSocial = socialLinks.find((link) => link.icon === 'github')
 <template lang="pug">
 header.navbar(:class="{ 'navbar--shrunk': isScrolled }")
   div.navbar__inner.container
-    a.navbar__brand(href="#hero" @click="ui.closeDrawer()")
+    NuxtLink.navbar__brand(to="/" @click="ui.closeDrawer()")
       svg.navbar__crest(width="30" height="30" viewBox="0 0 28 28" fill="none" aria-hidden="true")
         path(d="M14 3 L24 8 V16 C24 21 19.5 24.5 14 26 C8.5 24.5 4 21 4 16 V8 Z" stroke="currentColor" stroke-width="1.6")
         circle(cx="14" cy="14.5" r="2.2" fill="currentColor")
       span {{ profile.name }}
 
     nav.navbar__links(aria-label="Primary")
-      a.navbar__link(
+      NuxtLink.navbar__link(
         v-for="link in navLinks"
-        :key="link.href"
-        :href="link.href"
-        :class="{ 'navbar__link--active': ui.activeSection === link.href.replace('#', '') }"
+        :key="link.to"
+        :to="link.to"
+        :class="{ 'navbar__link--active': route.path === link.to }"
       ) {{ link.label }}
 
     div.navbar__actions
@@ -50,10 +49,10 @@ header.navbar(:class="{ 'navbar--shrunk': isScrolled }")
     width="290"
   )
     nav.navbar__drawer-nav(aria-label="Mobile")
-      a.navbar__drawer-link(
+      NuxtLink.navbar__drawer-link(
         v-for="link in navLinks"
-        :key="link.href"
-        :href="link.href"
+        :key="link.to"
+        :to="link.to"
         @click="ui.closeDrawer()"
       ) {{ link.label }}
       a.navbar__drawer-link(

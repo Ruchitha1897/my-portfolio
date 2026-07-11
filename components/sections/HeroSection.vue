@@ -77,6 +77,17 @@ section#hero.hero(ref="heroEl")
       div.hero__stats.js-hero-copy
         StatCounter(v-for="stat in stats" :key="stat.id" :stat="stat")
 
+      div.hero__badges
+        a.hero__badge(
+          v-for="cert in certifications"
+          :key="cert.id"
+          :href="cert.credentialUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          :title="cert.title"
+        )
+          img.hero__badge-img(:src="cert.badgeImage" :alt="cert.title" loading="lazy")
+
       div.hero__actions
         BaseButton.js-hero-cta(
           variant="primary" :href="profile.resumeFile" target="_blank" icon="download" magnetic
@@ -233,6 +244,29 @@ section#hero.hero(ref="heroEl")
   @include m.respond(md) {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.hero__badges {
+  display: flex;
+  align-items: center;
+  gap: t.$space-4;
+  margin-bottom: t.$space-6;
+}
+
+.hero__badge {
+  display: inline-flex;
+  transition: transform t.$duration-fast t.$ease-out, filter t.$duration-fast t.$ease-out;
+
+  &:hover {
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.45));
+  }
+}
+
+.hero__badge-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 }
 
 .hero__actions {

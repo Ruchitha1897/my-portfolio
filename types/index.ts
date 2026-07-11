@@ -5,7 +5,7 @@ export type Accent = 'gold' | 'blue' | 'emerald' | 'silver'
 
 export interface NavLink {
   label: string
-  href: string
+  to: string
 }
 
 export interface Stat {

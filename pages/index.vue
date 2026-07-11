@@ -11,17 +11,9 @@ useSeoMeta({
 div
   HeroSection
   SigilDivider
+  AboutSection
+  SigilDivider
   ProjectsSection
-  SigilDivider
-  ExperienceSection
-  SigilDivider
-  CertificationsSection
-  SigilDivider
-  SkillsSection 
-  SigilDivider
-  ResumeSection
-  SigilDivider
-  BadgesSection
   SigilDivider
   GithubSection
   SigilDivider

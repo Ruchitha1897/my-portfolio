@@ -37,12 +37,14 @@ export const profile = {
 } as const
 
 export const navLinks: NavLink[] = [
-  { label: 'Home', href: '#hero' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Resume', href: '#resume' },
-  { label: 'Certifications', href: '#certifications' },
-  { label: 'Badges', href: '#badges' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Experience', to: '/experience' },
+  { label: 'Certifications', to: '/certifications' },
+  { label: 'Skills', to: '/skills' },
+  { label: 'Resume', to: '/resume' },
+  { label: 'Badges', to: '/badges' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 export const stats: Stat[] = [
@@ -232,7 +234,7 @@ export const certifications: Certification[] = [
     date: '2024',
     credentialUrl: 'https://www.credly.com/',
     credentialId: 'ABC123XYZ',
-    badgeImage: '/badges/aws-certified-developer-associate.png',
+    badgeImage: '/certification-badges/aws-simulearn-ai-practitioner.png',
   },
   {
     id: 'cert-2',
@@ -240,7 +242,7 @@ export const certifications: Certification[] = [
     issuer: 'AWS SimuLearn',
     date: '2024',
     credentialUrl: 'https://www.credly.com/badges/c9ed39a0-108b-4169-a3b7-f7dfaf58de43',
-    badgeImage: '/badges/aws-simulearn-ai-practitioner.png',
+    badgeImage: '/certification-badges/aws-simulearn-ai-practitioner.png',
   },
   {
     id: 'cert-3',
@@ -249,7 +251,7 @@ export const certifications: Certification[] = [
     date: '2023',
     credentialUrl: 'https://www.credly.com/',
     credentialId: 'ABC123XYZ',
-    badgeImage: '/badges/aws-certified-cloud-practitioner.png',
+    badgeImage: '/certification-badges/aws-simulearn-ai-practitioner.png',
   },
 ]
 
@@ -266,5 +268,5 @@ export const socialLinks: SocialLink[] = [
   { id: 'github', label: 'GitHub', url: 'https://github.com/Ruchitha1897', icon: 'github' },
   { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/ruchitha-podhili-jayachandra-naidu-763b781a2', icon: 'linkedin' },
   { id: 'email', label: profile.email, url: `mailto:${profile.email}`, icon: 'mail' },
-  { id: 'location', label: profile.location, url: '#contact', icon: 'location' },
+  { id: 'location', label: profile.location, url: '/contact', icon: 'location' },
 ]
