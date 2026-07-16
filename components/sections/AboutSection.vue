@@ -12,21 +12,10 @@ section#about.section.about
         AppIcon(name="location" :size="16")
         span {{ profile.location }}
 
-      div.about__badges(v-reveal="1")
-        a.about__badge(
-          v-for="cert in certifications"
-          :key="cert.id"
-          :href="cert.credentialUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          :title="cert.title"
-        )
-          img.about__badge-img(:src="cert.badgeImage" :alt="cert.title" loading="lazy")
-
     div.about__body
       SectionHeading(
         eyebrow="About"
-        title="The engineer behind the code"
+        title="About Me"
         subtitle="A quick look at who I am, where I studied, and what I care about when I build."
       )
 
@@ -103,29 +92,6 @@ section#about.section.about
   padding: t.$space-3 t.$space-4;
   font-size: 0.85rem;
   color: t.$color-muted;
-}
-
-.about__badges {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: t.$space-4;
-}
-
-.about__badge {
-  display: inline-flex;
-  transition: transform t.$duration-fast t.$ease-out, filter t.$duration-fast t.$ease-out;
-
-  &:hover {
-    transform: translateY(-3px);
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.45));
-  }
-}
-
-.about__badge-img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
 }
 
 .about__paragraph {

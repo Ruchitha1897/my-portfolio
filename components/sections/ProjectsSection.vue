@@ -3,8 +3,6 @@ import type { Project, ProjectCategory } from '~/types'
 
 const groups: { key: ProjectCategory; label: string }[] = [
   { key: 'featured', label: 'Featured Projects' },
-  { key: 'academic', label: 'Academic Projects' },
-  { key: 'personal', label: 'Personal Projects' },
 ]
 
 const byCategory = (key: ProjectCategory): Project[] =>

@@ -11,11 +11,7 @@ useSeoMeta({
 div
   HeroSection
   SigilDivider
-  AboutSection
-  SigilDivider
   ProjectsSection
-  SigilDivider
-  GithubSection
   SigilDivider
   ContactSection
 </template>

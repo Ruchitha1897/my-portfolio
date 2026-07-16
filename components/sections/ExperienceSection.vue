@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const experience = timeline.filter((entry) => entry.kind === 'experience')
 const education = timeline.filter((entry) => entry.kind === 'education')
+const volunteer = timeline.filter((entry) => entry.kind === 'volunteer')
 </script>
 
 <template lang="pug">
@@ -23,17 +24,30 @@ section#experience.section.experience
             p.timeline__org {{ entry.org }}
             p.timeline__description {{ entry.description }}
 
-      div.experience__education
-        h3.experience__education-title Education
-        ol.timeline
-          li.timeline__item(v-for="entry in education" :key="entry.id")
-            div.timeline__marker
-            div.timeline__content
-              div.timeline__meta
-                span.timeline__range.mono {{ entry.range }}
-              h3.timeline__title {{ entry.title }}
-              p.timeline__org {{ entry.org }}
-              p.timeline__description(v-if="entry.description") {{ entry.description }}
+      div.experience__side
+        div.experience__education
+          h3.experience__education-title Education
+          ol.timeline
+            li.timeline__item(v-for="entry in education" :key="entry.id")
+              div.timeline__marker
+              div.timeline__content
+                div.timeline__meta
+                  span.timeline__range.mono {{ entry.range }}
+                h3.timeline__title {{ entry.title }}
+                p.timeline__org {{ entry.org }}
+                p.timeline__description(v-if="entry.description") {{ entry.description }}
+
+        div.experience__volunteer
+          h3.experience__volunteer-title Volunteering
+          ol.timeline
+            li.timeline__item(v-for="entry in volunteer" :key="entry.id")
+              div.timeline__marker
+              div.timeline__content
+                div.timeline__meta
+                  span.timeline__range.mono {{ entry.range }}
+                h3.timeline__title {{ entry.title }}
+                p.timeline__org {{ entry.org }}
+                p.timeline__description(v-if="entry.description") {{ entry.description }}
 </template>
 
 <style scoped lang="scss">
@@ -47,7 +61,14 @@ section#experience.section.experience
   }
 }
 
-.experience__education-title {
+.experience__side {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-8;
+}
+
+.experience__education-title,
+.experience__volunteer-title {
   font-size: 1.1rem;
   margin-bottom: t.$space-5;
   color: t.$color-text;

@@ -9,10 +9,8 @@ const username = profile.githubUsername
 const repos = ref<GithubRepo[]>([])
 const state = ref<'loading' | 'ready' | 'error'>('loading')
 
-// Stats + contribution graph as pre-rendered images from two widely
-// used community services; both are lazy-loaded below the fold.
-const statsImg = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=transparent&title_color=d4af37&icon_color=3e8ef7&text_color=97a3b8&hide_border=true`
-const langsImg = `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=transparent&title_color=d4af37&text_color=97a3b8&hide_border=true`
+// Contribution graph as a pre-rendered image from a community service,
+// lazy-loaded below the fold.
 const graphImg = `https://ghchart.rshah.org/d4af37/${username}`
 
 onMounted(async () => {
@@ -38,14 +36,8 @@ section#github.section.github
     SectionHeading(
       eyebrow="GitHub"
       title="Open-source activity"
-      subtitle="Top repositories, contribution history and language mix — pulled live from GitHub."
+      subtitle="Top repositories and contribution history — pulled live from GitHub."
     )
-
-    div.github__images(v-reveal)
-      GlassCard.github__image-card(accent="blue")
-        img(:src="statsImg" alt="GitHub statistics overview" loading="lazy" width="450" height="50")
-      GlassCard.github__image-card(accent="blue")
-        img(:src="langsImg" alt="Most used programming languages" loading="lazy" width="360" height="200")
 
     GlassCard.github__graph-card(accent="emerald" v-reveal)
       img.github__graph(:src="graphImg" :alt="`Contribution graph for ${username}`" loading="lazy")
@@ -77,27 +69,6 @@ section#github.section.github
 </template>
 
 <style scoped lang="scss">
-.github__images {
-  display: grid;
-  gap: t.$space-5;
-  margin-bottom: t.$space-5;
-
-  @include m.respond(md) {
-    grid-template-columns: 3fr 2fr;
-  }
-}
-
-.github__image-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
 .github__graph-card {
   margin-bottom: t.$space-6;
   overflow-x: auto;

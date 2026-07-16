@@ -29,7 +29,7 @@ export interface SkillCategory {
 
 export interface TimelineEntry {
   id: string
-  kind: 'education' | 'experience'
+  kind: 'education' | 'experience' | 'volunteer'
   range: string
   title: string
   org: string
@@ -47,6 +47,15 @@ export interface Project {
   githubUrl?: string
   liveUrl?: string
   accent: Accent
+}
+
+export interface Publication {
+  id: string
+  title: string
+  authors: string[]
+  venue: string
+  year: string
+  doi?: string
 }
 
 export interface Certification {

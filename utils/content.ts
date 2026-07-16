@@ -8,6 +8,7 @@ import type {
   Certification,
   NavLink,
   Project,
+  Publication,
   SkillCategory,
   SocialLink,
   Stat,
@@ -41,6 +42,7 @@ export const navLinks: NavLink[] = [
   { label: 'Projects', to: '/projects' },
   { label: 'Experience', to: '/experience' },
   { label: 'Certifications', to: '/certifications' },
+  { label: 'Publications', to: '/publications' },
   { label: 'Skills', to: '/skills' },
   { label: 'Resume', to: '/resume' },
   { label: 'Badges', to: '/badges' },
@@ -72,6 +74,15 @@ export const timeline: TimelineEntry[] = [
     org: 'Previous Company',
     description:
       'Built and scaled FastAPI services on AWS, introduced containerized deployments with Docker and Kubernetes, and mentored two junior engineers.',
+  },
+  {
+    id: 'exp-volunteer',
+    kind: 'volunteer',
+    range: '2023 — Present',
+    title: 'Community Member',
+    org: 'Society of Women Engineers (SWE)',
+    description:
+      'Volunteer with SWE, supporting outreach and mentorship programs that encourage women and underrepresented groups to pursue and stay in engineering careers.',
   },
   {
     id: 'edu-2',
@@ -183,6 +194,46 @@ export const projects: Project[] = [
     accent: 'gold',
   },
   {
+    id: 'proj-6',
+    title: 'Grounded SQL',
+    description:
+      'A text-to-SQL assistant that grounds LLM-generated queries in the real schema via RAG over pgvector, cutting hallucinated columns and joins before a query ever runs.',
+    stack: ['Python', 'OpenAI API', 'RAG', 'pgvector', 'PostgreSQL'],
+    category: 'featured',
+    githubUrl: 'https://github.com/Ruchitha1897',
+    accent: 'emerald',
+  },
+  {
+    id: 'proj-8',
+    title: 'AI Code Assistant',
+    description:
+      'An LLM-powered code review platform with RAG over pgvector and GitHub webhooks, surfacing confidence-scored inline suggestions with severity tagging on every pull request.',
+    stack: ['TypeScript', 'OpenAI API', 'RAG', 'pgvector', 'GitHub Actions'],
+    category: 'featured',
+    githubUrl: 'https://github.com/Ruchitha1897',
+    accent: 'gold',
+  },
+  {
+    id: 'proj-9',
+    title: 'Multi-Agent RAG System',
+    description:
+      'A multi-agent pipeline that routes queries between specialized retrieval, reasoning, and tool-use agents, coordinating over a shared pgvector knowledge base to answer questions no single agent could handle alone.',
+    stack: ['Python', 'LangChain', 'OpenAI API', 'RAG', 'pgvector'],
+    category: 'featured',
+    githubUrl: 'https://github.com/Ruchitha1897',
+    accent: 'blue',
+  },
+  {
+    id: 'proj-7',
+    title: 'AI Cricket Decision Coach',
+    description:
+      'A computer-vision assistant that reviews cricket match footage, tracking ball trajectory and player positioning to suggest LBW, run-out, and shot-selection calls in real time.',
+    stack: ['Python', 'Computer Vision', 'OpenCV', 'PyTorch', 'FastAPI'],
+    category: 'featured',
+    githubUrl: 'https://github.com/Ruchitha1897',
+    accent: 'blue',
+  },
+  {
     id: 'proj-2',
     title: 'Real-Time Analytics Dashboard',
     description:
@@ -252,6 +303,35 @@ export const certifications: Certification[] = [
     credentialUrl: 'https://www.credly.com/',
     credentialId: 'ABC123XYZ',
     badgeImage: '/certification-badges/aws-simulearn-ai-practitioner.png',
+  },
+]
+
+export const publications: Publication[] = [
+  {
+    id: 'pub-1',
+    title:
+      'Comparative analysis of active contour, random walker and watershed algorithms in segmentation of ovarian cancer',
+    authors: [
+      'Ruchitha P J',
+      'Sai Richitha Y',
+      'Ashwini Kodipalli',
+      'Roshan Joy Martis',
+      'Santosh Dasar',
+      'Taha Ismail',
+    ],
+    venue:
+      '2022 International Conference on Distributed Computing, VLSI, Electrical Circuits and Robotics (DISCOVER)',
+    year: '2022',
+    doi: 'https://doi.org/10.1109/DISCOVER55800.2022.9974855',
+  },
+  {
+    id: 'pub-2',
+    title: 'Segmentation of Ovarian Cancer using Active Contour and Random Walker Algorithm',
+    authors: ['Ruchitha P J', 'Sai Richitha Y', 'Ashwini Kodipalli', 'Roshan Joy Martis'],
+    venue:
+      '2021 5th International Conference on Electrical, Electronics, Communication, Computer Technologies and Optimization Techniques (ICEECCOT)',
+    year: '2021',
+    doi: 'https://doi.org/10.1109/ICEECCOT52851.2021.9707939',
   },
 ]
 
