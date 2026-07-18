@@ -56,6 +56,8 @@ export interface Publication {
   venue: string
   year: string
   doi?: string
+  pdfFile?: string
+  thumbnail?: string
 }
 
 export interface Certification {

@@ -323,6 +323,8 @@ export const publications: Publication[] = [
       '2022 International Conference on Distributed Computing, VLSI, Electrical Circuits and Robotics (DISCOVER)',
     year: '2022',
     doi: 'https://doi.org/10.1109/DISCOVER55800.2022.9974855',
+    pdfFile: '/publications/discover-2022-segmentation-comparison.pdf',
+    thumbnail: '/publications/discover-2022-segmentation-comparison.png',
   },
   {
     id: 'pub-2',
@@ -332,6 +334,8 @@ export const publications: Publication[] = [
       '2021 5th International Conference on Electrical, Electronics, Communication, Computer Technologies and Optimization Techniques (ICEECCOT)',
     year: '2021',
     doi: 'https://doi.org/10.1109/ICEECCOT52851.2021.9707939',
+    pdfFile: '/publications/iceeccot-2021-ovarian-segmentation.pdf',
+    thumbnail: '/publications/iceeccot-2021-ovarian-segmentation.png',
   },
 ]
 

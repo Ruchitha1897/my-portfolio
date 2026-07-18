@@ -39,21 +39,39 @@ section#publications.section.publications
         interactive
         v-reveal="i"
       )
-        span.pub-card__icon
-          AppIcon(name="medal" :size="22")
-        h3.pub-card__title {{ pub.title }}
-        p.pub-card__authors {{ pub.authors.join(', ') }}
-        p.pub-card__venue {{ pub.venue }} · {{ pub.year }}
-        p.pub-card__citations(v-if="citationCounts[pub.id] !== undefined")
-          AppIcon(name="star" :size="13")
-          |  {{ citationCounts[pub.id] }} citation{{ citationCounts[pub.id] === 1 ? '' : 's' }}
-        BaseButton.pub-card__link(
-          v-if="pub.doi"
-          variant="secondary"
-          :href="pub.doi"
+        a.pub-card__thumb-link(
+          v-if="pub.thumbnail"
+          :href="pub.pdfFile ?? pub.doi"
           target="_blank"
-          icon="external"
-        ) View Paper
+          rel="noopener noreferrer"
+          :aria-label="`Open PDF preview of ${pub.title}`"
+        )
+          img.pub-card__thumb(:src="pub.thumbnail" :alt="`First page of ${pub.title}`" loading="lazy")
+        span.pub-card__icon(v-else)
+          AppIcon(name="medal" :size="22")
+
+        div.pub-card__body
+          h3.pub-card__title {{ pub.title }}
+          p.pub-card__authors {{ pub.authors.join(', ') }}
+          p.pub-card__venue {{ pub.venue }} · {{ pub.year }}
+          p.pub-card__citations(v-if="citationCounts[pub.id] !== undefined")
+            AppIcon(name="star" :size="13")
+            |  {{ citationCounts[pub.id] }} citation{{ citationCounts[pub.id] === 1 ? '' : 's' }}
+          div.pub-card__actions
+            BaseButton.pub-card__link(
+              v-if="pub.doi"
+              variant="secondary"
+              :href="pub.doi"
+              target="_blank"
+              icon="external"
+            ) View Paper
+            BaseButton.pub-card__link(
+              v-if="pub.pdfFile"
+              variant="ghost"
+              :href="pub.pdfFile"
+              target="_blank"
+              icon="download"
+            ) Download PDF
 </template>
 
 <style scoped lang="scss">
@@ -66,6 +84,45 @@ section#publications.section.publications
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: t.$space-5;
+
+  @include m.respond(sm) {
+    flex-direction: row;
+  }
+}
+
+.pub-card__thumb-link {
+  flex-shrink: 0;
+  display: inline-block;
+  border-radius: t.$radius-md;
+  overflow: hidden;
+  border: 1px solid t.$color-border-strong;
+  box-shadow: t.$shadow-soft;
+  transition: transform t.$duration-fast t.$ease-out;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.pub-card__thumb {
+  display: block;
+  width: 108px;
+  height: 140px;
+  object-fit: cover;
+  object-position: top;
+
+  @include m.respond(sm) {
+    width: 120px;
+    height: 156px;
+  }
+}
+
+.pub-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
 }
 
 .pub-card__icon {
@@ -78,6 +135,7 @@ section#publications.section.publications
   background: rgba(47, 217, 138, 0.12);
   color: t.$color-emerald-soft;
   margin-bottom: t.$space-4;
+  flex-shrink: 0;
 }
 
 .pub-card__title {
@@ -110,8 +168,14 @@ section#publications.section.publications
   margin-bottom: t.$space-2;
 }
 
+.pub-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: t.$space-3;
+  margin-top: t.$space-3;
+}
+
 .pub-card__link {
   font-size: 0.85rem;
-  margin-top: t.$space-3;
 }
 </style>
