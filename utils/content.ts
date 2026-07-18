@@ -27,7 +27,7 @@ export const profile = {
     'AI Enthusiast',
   ],
   tagline:
-    'I build fast,, and running them reliably on AWS Outside client work I explore applied AI and contribute to open-source tooling. I care about code the next engineer can read without a walkthrough reliable products end to end — from cloud infrastructure to the pixels people actually touch.',
+    'I build fast, reliable products end to end — from cloud infrastructure to the pixels people actually touch.',
   bio: [
     'I\u2019m a full-stack engineer who enjoys the whole path from a rough idea to a deployed, monitored service. Most of my recent work sits at the intersection of web applications and cloud infrastructure — designing APIs, shaping data models, and running them reliably on AWS.',
     'Outside client work I explore applied AI and contribute to open-source tooling. I care about code the next engineer can read without a walkthrough.',
@@ -58,22 +58,31 @@ export const stats: Stat[] = [
 
 export const timeline: TimelineEntry[] = [
   {
+    id: 'exp-3',
+    kind: 'experience',
+    range: 'Aug 2024 — Present',
+    title: 'Full Stack Developer II',
+    org: 'Contracts and Purchasing — Northern Arizona University, Flagstaff, AZ',
+    description:
+      'Shipped a React, Django, FastAPI, PostgreSQL platform replacing a legacy system across 500+ contracts and 150+ vendors. Built an LLM layer with RAG (pgvector embeddings), structured JSON-schema prompts, and confidence-scored routing to human review — cutting hallucinations and improving field-extraction accuracy across 20+ document types. Architected an AI-augmented vendor onboarding pipeline on AWS S3 + OpenAI API that OCR-parses and classifies vendor documents, populates 20+ normalized fields, and drafts human-in-the-loop emails — eliminating 80% of manual data entry.',
+  },
+  {
     id: 'exp-2',
     kind: 'experience',
-    range: '2023 — Present',
-    title: 'Software Engineer',
-    org: 'Company Name',
+    range: 'Aug 2022 — Aug 2024',
+    title: 'Full Stack Developer',
+    org: 'SpeakUp B.V, Bangalore, India',
     description:
-      'Own a Vue + Node service handling core product workflows; led the TypeScript migration and cut production incidents by tightening the CI pipeline.',
+      'Led the migration of the core frontend from Vue 2 to Vue 3 with TypeScript and modernized Node.js backend services, lifting developer productivity 30%, cutting build times 40%, and reducing production bundle size 25%. Architected scalable, cloud-native SaaS infrastructure on AWS (EC2, Lambda, S3, EKS, API Gateway, CloudFront, CloudWatch) with Docker on Kubernetes, achieving 99.9% uptime and reducing average API latency by 45%. Served 500K requests/day across 20K users and reduced MTTR by 90% through on-call rotation. Hardened security with IAM least-privilege roles, AWS Cognito with JWT/OAuth 2.0, RBAC, and audit logging supporting SOC 2-aligned controls.',
   },
   {
     id: 'exp-1',
     kind: 'experience',
-    range: '2021 — 2023',
-    title: 'Backend Developer',
-    org: 'Previous Company',
+    range: 'May 2021 — Jul 2022',
+    title: 'Software Developer',
+    org: 'ACIK Enterprises (OPC) Pvt Ltd, Bangalore, India',
     description:
-      'Built and scaled FastAPI services on AWS, introduced containerized deployments with Docker and Kubernetes, and mentored two junior engineers.',
+      'Developed and tested 25+ high-performance RESTful APIs, achieving 99% test coverage and reducing production defects by 35%. Engineered dashboards with optimized SQL, cutting report latency from 30 minutes to under 2 minutes and reporting overhead by 60%. Built reusable input validation that reduced repetitive logic by 40% and improved API response consistency by 30%.',
   },
   {
     id: 'exp-volunteer',
@@ -323,8 +332,8 @@ export const publications: Publication[] = [
       '2022 International Conference on Distributed Computing, VLSI, Electrical Circuits and Robotics (DISCOVER)',
     year: '2022',
     doi: 'https://doi.org/10.1109/DISCOVER55800.2022.9974855',
-    pdfFile: '/publications/discover-2022-segmentation-comparison.pdf',
-    thumbnail: '/publications/discover-2022-segmentation-comparison.png',
+    pdfFile: '/research-papers/discover-2022-segmentation-comparison.pdf',
+    thumbnail: '/research-papers/discover-2022-segmentation-comparison.png',
   },
   {
     id: 'pub-2',
@@ -334,8 +343,8 @@ export const publications: Publication[] = [
       '2021 5th International Conference on Electrical, Electronics, Communication, Computer Technologies and Optimization Techniques (ICEECCOT)',
     year: '2021',
     doi: 'https://doi.org/10.1109/ICEECCOT52851.2021.9707939',
-    pdfFile: '/publications/iceeccot-2021-ovarian-segmentation.pdf',
-    thumbnail: '/publications/iceeccot-2021-ovarian-segmentation.png',
+    pdfFile: '/research-papers/iceeccot-2021-ovarian-segmentation.pdf',
+    thumbnail: '/research-papers/iceeccot-2021-ovarian-segmentation.png',
   },
 ]
 

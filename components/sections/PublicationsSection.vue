@@ -39,18 +39,11 @@ section#publications.section.publications
         interactive
         v-reveal="i"
       )
-        a.pub-card__thumb-link(
-          v-if="pub.thumbnail"
-          :href="pub.pdfFile ?? pub.doi"
-          target="_blank"
-          rel="noopener noreferrer"
-          :aria-label="`Open PDF preview of ${pub.title}`"
-        )
-          img.pub-card__thumb(:src="pub.thumbnail" :alt="`First page of ${pub.title}`" loading="lazy")
-        span.pub-card__icon(v-else)
+        span.pub-card__icon(v-if="!pub.thumbnail")
           AppIcon(name="medal" :size="22")
 
         div.pub-card__body
+          span.pub-card__ieee-badge IEEE
           h3.pub-card__title {{ pub.title }}
           p.pub-card__authors {{ pub.authors.join(', ') }}
           p.pub-card__venue {{ pub.venue }} · {{ pub.year }}
@@ -72,6 +65,15 @@ section#publications.section.publications
               target="_blank"
               icon="download"
             ) Download PDF
+
+        a.pub-card__thumb-link(
+          v-if="pub.thumbnail"
+          :href="pub.pdfFile ?? pub.doi"
+          target="_blank"
+          rel="noopener noreferrer"
+          :aria-label="`Open PDF preview of ${pub.title}`"
+        )
+          img.pub-card__thumb(:src="pub.thumbnail" :alt="`First page of ${pub.title}`" loading="lazy")
 </template>
 
 <style scoped lang="scss">
@@ -99,6 +101,7 @@ section#publications.section.publications
   border: 1px solid t.$color-border-strong;
   box-shadow: t.$shadow-soft;
   transition: transform t.$duration-fast t.$ease-out;
+  order: 1;
 
   &:hover {
     transform: translateY(-3px);
@@ -107,14 +110,14 @@ section#publications.section.publications
 
 .pub-card__thumb {
   display: block;
-  width: 108px;
-  height: 140px;
+  width: 150px;
+  height: 194px;
   object-fit: cover;
   object-position: top;
 
   @include m.respond(sm) {
-    width: 120px;
-    height: 156px;
+    width: 180px;
+    height: 233px;
   }
 }
 
@@ -123,6 +126,22 @@ section#publications.section.publications
   flex-direction: column;
   align-items: flex-start;
   min-width: 0;
+  flex: 1;
+  order: 2;
+}
+
+.pub-card__ieee-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: t.$color-emerald-soft;
+  background: rgba(47, 217, 138, 0.12);
+  border: 1px solid rgba(47, 217, 138, 0.35);
+  padding: 0.2rem 0.5rem;
+  border-radius: t.$radius-pill;
+  margin-bottom: t.$space-3;
 }
 
 .pub-card__icon {
